@@ -24,6 +24,8 @@ import {
 
 // --- Components ---
 
+const WHATSAPP_URL = `https://wa.me/5582991068093?text=${encodeURIComponent("Olá! Vi a landing page premium de quiropraxia e gostaria de um orçamento para uma página de alto padrão para o meu negócio.")}`;
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -37,7 +39,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Início', href: '#home' },
-    { name: 'A Clínica', href: '#about' },
+    { name: 'O Design', href: '#about' },
     { name: 'Procedimentos', href: '#procedures' },
     { name: 'Diferenciais', href: '#differentials' },
     { name: 'Resultados', href: '#results' },
@@ -60,9 +62,10 @@ const Navbar = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 2.2 }}
-          className="flex items-center gap-2"
+          className="flex items-center gap-3"
         >
-          <span className="text-2xl font-serif font-bold tracking-widest text-gold-500 uppercase">Lumière</span>
+          <span className="text-2xl font-serif font-bold tracking-widest text-gold-500 uppercase">ConvertLab</span>
+          <span className="bg-gold-100 text-gold-600 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest">Showcase Premium</span>
         </motion.div>
 
         {/* Desktop Menu */}
@@ -79,15 +82,18 @@ const Navbar = () => {
               {link.name}
             </motion.a>
           ))}
-          <motion.button
+          <motion.a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-gold-400 text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gold-500 transition-all shadow-lg shadow-gold-400/20"
           >
-            Agendar Avaliação
-          </motion.button>
+            Quero uma página assim
+          </motion.a>
         </div>
 
         {/* Mobile Toggle */}
@@ -119,9 +125,14 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <button className="bg-gold-400 text-white w-full py-4 rounded-xl font-bold uppercase tracking-widest mt-4">
-                Agendar Avaliação
-              </button>
+              <a 
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gold-400 text-white w-full py-4 rounded-xl font-bold uppercase tracking-widest mt-4 text-center block"
+              >
+                Quero uma página assim
+              </a>
             </div>
           </motion.div>
         )}
@@ -144,8 +155,8 @@ const Hero = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-nude-50 via-nude-50/80 to-transparent z-10" />
         <img 
-          src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=2000" 
-          alt="Luxury Spa Atmosphere" 
+          src="https://www.ibratemco.com.br/imagens/servicos/quiropraxia.png" 
+          alt="Chiropractic Care" 
           className="w-full h-full object-cover object-center"
           referrerPolicy="no-referrer"
         />
@@ -159,23 +170,26 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: "easeOut", delay: 2.4 }}
           >
             <span className="inline-block bg-gold-100 text-gold-600 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-              Estética de Alto Padrão
+              Quiropraxia de Alto Padrão
             </span>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.1] mb-8 text-ink">
-              Realce sua <span className="italic text-gold-400">beleza</span> com <br />
-              <span className="font-light">sofisticação e naturalidade.</span>
+              Recupere sua <span className="italic text-gold-400">mobilidade</span> com <br />
+              <span className="font-light">precisão e cuidado.</span>
             </h1>
             <p className="text-lg md:text-xl text-ink/70 mb-10 max-w-xl leading-relaxed">
-              Tratamentos personalizados e tecnologia de ponta para quem busca resultados excepcionais que respeitam sua identidade.
+              Tratamentos especializados e técnicas avançadas para quem busca uma vida sem dores e com máximo desempenho físico.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <motion.button
+              <motion.a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="bg-ink text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest text-sm shadow-2xl shadow-ink/20 flex items-center justify-center gap-3"
               >
-                Agendar minha avaliação <ArrowRight size={18} />
-              </motion.button>
+                Quero uma página como esta <ArrowRight size={18} />
+              </motion.a>
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -222,8 +236,8 @@ const About = () => {
           >
             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=1000" 
-                alt="Clinic Environment" 
+                src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=1000" 
+                alt="Chiropractic Treatment" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -238,19 +252,19 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-gold-500 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">A Experiência Lumière</span>
+            <span className="text-gold-500 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">O Design ConvertLab</span>
             <h2 className="text-4xl md:text-5xl font-serif mb-8 leading-tight">
-              Onde a ciência encontra a <span className="italic">arte da estética.</span>
+              Onde a autoridade encontra a <span className="italic">experiência digital.</span>
             </h2>
             <p className="text-lg text-ink/70 mb-8 leading-relaxed">
-              Na Lumière, acreditamos que a verdadeira beleza é aquela que realça quem você já é. Nossa filosofia é baseada na naturalidade, segurança e excelência técnica.
+              Este projeto demonstra como o design estratégico pode elevar o posicionamento de uma clínica de quiropraxia, transformando visitantes em pacientes de alto valor.
             </p>
             <div className="space-y-6 mb-10">
               {[
-                'Protocolos exclusivos e personalizados',
-                'Equipe altamente qualificada e experiente',
-                'Tecnologias de última geração',
-                'Ambiente privativo e sofisticado'
+                'Design focado em conversão e autoridade',
+                'Experiência do usuário (UX) de alto padrão',
+                'Copywriting persuasivo e elegante',
+                'Presença digital que transmite confiança'
               ].map((item) => (
                 <div key={item} className="flex items-center gap-4">
                   <div className="w-6 h-6 rounded-full bg-gold-50 flex items-center justify-center text-gold-500">
@@ -261,7 +275,7 @@ const About = () => {
               ))}
             </div>
             <button className="group flex items-center gap-3 text-ink font-bold uppercase tracking-widest text-sm">
-              Conheça nossa história <div className="w-10 h-[1px] bg-gold-400 group-hover:w-16 transition-all" />
+              Ver portfólio completo <div className="w-10 h-[1px] bg-gold-400 group-hover:w-16 transition-all" />
             </button>
           </motion.div>
         </div>
@@ -273,40 +287,40 @@ const About = () => {
 const Procedures = () => {
   const procedures = [
     {
-      title: 'Harmonização Facial',
-      desc: 'Equilíbrio e simetria com resultados naturais.',
-      img: 'https://clinicalegerportoalegre.com.br/wp-content/uploads/2024/01/harmonizacao-facial-porto-alegre-clinica-leger.jpg',
-      price: 'A partir de R$ 1.200'
+      title: 'Ajuste Quiroprático',
+      desc: 'Correção de desalinhamentos vertebrais para alívio imediato.',
+      img: 'https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?auto=format&fit=crop&q=80&w=800',
+      price: 'Showcase Premium'
     },
     {
-      title: 'Preenchimento Labial',
-      desc: 'Volume, contorno e hidratação para seus lábios.',
-      img: 'https://aureadermatologia.com.br/home/wp-content/uploads/2022/11/preenchimento_labial_tratamento-1024x743.jpg',
-      price: 'A partir de R$ 900'
+      title: 'Liberação Miofascial',
+      desc: 'Técnica manual para reduzir tensões e dores musculares.',
+      img: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=800',
+      price: 'Showcase Premium'
     },
     {
-      title: 'Toxina Botulínica',
-      desc: 'Prevenção e suavização de linhas de expressão.',
-      img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800',
-      price: 'A partir de R$ 800'
+      title: 'Quiropraxia Esportiva',
+      desc: 'Foco em performance e recuperação rápida para atletas.',
+      img: 'https://images.unsplash.com/photo-1579126038374-6064e9370f0f?auto=format&fit=crop&q=80&w=800',
+      price: 'Showcase Premium'
     },
     {
-      title: 'Bioestimuladores',
-      desc: 'Estímulo de colágeno para uma pele mais firme.',
-      img: 'https://static.wixstatic.com/media/da4f03_3a57e96103654e8887dd17b364cf4f0a~mv2.png/v1/fill/w_568,h_568,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/da4f03_3a57e96103654e8887dd17b364cf4f0a~mv2.png',
-      price: 'A partir de R$ 1.500'
+      title: 'Avaliação Postural',
+      desc: 'Análise detalhada da sua postura e biomecânica.',
+      img: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800',
+      price: 'Showcase Premium'
     },
     {
-      title: 'Skinbooster',
-      desc: 'Hidratação profunda e brilho imediato.',
-      img: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&q=80&w=800',
-      price: 'A partir de R$ 600'
+      title: 'Tratamento de Hérnia',
+      desc: 'Protocolos não invasivos para alívio de compressões nervosas.',
+      img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800',
+      price: 'Showcase Premium'
     },
     {
-      title: 'Lipo de Papada',
-      desc: 'Definição do contorno facial sem cirurgia.',
-      img: 'https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?auto=format&fit=crop&q=80&w=800',
-      price: 'A partir de R$ 500'
+      title: 'Prevenção de Lesões',
+      desc: 'Manutenção da saúde da coluna para uma vida ativa.',
+      img: 'https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?auto=format&fit=crop&q=80&w=800',
+      price: 'Showcase Premium'
     }
   ];
 
@@ -574,7 +588,7 @@ const CTASection = () => {
     <section className="py-32 relative overflow-hidden bg-white">
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=2000" 
+          src="https://www.ibratemco.com.br/imagens/servicos/quiropraxia.png" 
           className="w-full h-full object-cover opacity-10 grayscale" 
           alt="Background"
           referrerPolicy="no-referrer"
@@ -588,21 +602,24 @@ const CTASection = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-5xl md:text-7xl font-serif mb-10 leading-tight">
-              Pronta para revelar sua <br />
-              <span className="italic text-gold-400 text-6xl md:text-8xl">melhor versão?</span>
+              Sua marca merece esse <br />
+              <span className="italic text-gold-400 text-6xl md:text-8xl">nível de presença.</span>
             </h2>
             <p className="text-xl text-ink/60 mb-12 max-w-2xl mx-auto">
-              Agende agora sua avaliação personalizada e descubra o protocolo ideal para realçar sua beleza natural.
+              Transformamos sua clínica em uma marca premium com design estratégico e alta conversão.
             </p>
-            <motion.button
+            <motion.a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gold-400 text-white px-12 py-6 rounded-full font-bold uppercase tracking-[0.2em] text-sm shadow-2xl shadow-gold-400/40"
+              className="bg-gold-400 text-white px-12 py-6 rounded-full font-bold uppercase tracking-[0.2em] text-sm shadow-2xl shadow-gold-400/40 inline-block"
             >
-              Agendar meu atendimento
-            </motion.button>
+              Contratar ConvertLab
+            </motion.a>
             <p className="mt-8 text-xs font-bold uppercase tracking-widest text-ink/40">
-              Atendimento exclusivo com hora marcada
+              Projetos exclusivos para marcas high-ticket
             </p>
           </motion.div>
         </div>
@@ -617,9 +634,9 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           <div className="col-span-1 lg:col-span-1">
-            <span className="text-3xl font-serif font-bold tracking-widest text-gold-500 uppercase mb-8 block">Lumière</span>
+            <span className="text-3xl font-serif font-bold tracking-widest text-gold-500 uppercase mb-8 block">ConvertLab</span>
             <p className="text-ink/60 mb-8 leading-relaxed">
-              Referência em estética avançada e bem-estar. Unindo tecnologia e arte para resultados extraordinários.
+              Agência especializada em branding premium e landing pages de alta conversão para o mercado de saúde e estética.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full border border-nude-200 flex items-center justify-center text-ink hover:bg-gold-400 hover:text-white hover:border-gold-400 transition-all">
@@ -632,36 +649,36 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest mb-8">Links Rápidos</h4>
+            <h4 className="text-sm font-bold uppercase tracking-widest mb-8">Nossos Serviços</h4>
             <ul className="space-y-4 text-ink/60">
-              <li><a href="#home" className="hover:text-gold-500 transition-colors">Início</a></li>
-              <li><a href="#about" className="hover:text-gold-500 transition-colors">A Clínica</a></li>
-              <li><a href="#procedures" className="hover:text-gold-500 transition-colors">Procedimentos</a></li>
-              <li><a href="#results" className="hover:text-gold-500 transition-colors">Resultados</a></li>
+              <li><a href="#" className="hover:text-gold-500 transition-colors">Landing Pages Premium</a></li>
+              <li><a href="#" className="hover:text-gold-500 transition-colors">Branding Estratégico</a></li>
+              <li><a href="#" className="hover:text-gold-500 transition-colors">Gestão de Tráfego</a></li>
+              <li><a href="#" className="hover:text-gold-500 transition-colors">Consultoria de Posicionamento</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest mb-8">Contato</h4>
+            <h4 className="text-sm font-bold uppercase tracking-widest mb-8">Fale Conosco</h4>
             <ul className="space-y-6 text-ink/60">
               <li className="flex items-start gap-4">
                 <MapPin size={18} className="text-gold-400 shrink-0" />
-                <span>Av. das Américas, 500 - Bloco 2 <br /> Barra da Tijuca, Rio de Janeiro</span>
+                <span>Atendimento Global <br /> Presença Digital em todo o Brasil</span>
               </li>
               <li className="flex items-center gap-4">
                 <Phone size={18} className="text-gold-400 shrink-0" />
-                <span>(21) 99999-9999</span>
+                <span>(82) 99106-8093</span>
               </li>
               <li className="flex items-center gap-4">
-                <Clock size={18} className="text-gold-400 shrink-0" />
-                <span>Seg - Sex: 09h às 20h <br /> Sáb: 09h às 14h</span>
+                <MessageCircle size={18} className="text-gold-400 shrink-0" />
+                <span>contato@convertlab.com.br</span>
               </li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-sm font-bold uppercase tracking-widest mb-8">Newsletter</h4>
-            <p className="text-ink/60 mb-6 text-sm">Receba dicas de beleza e novidades exclusivas.</p>
+            <p className="text-ink/60 mb-6 text-sm">Receba insights sobre branding e performance.</p>
             <div className="relative">
               <input 
                 type="email" 
@@ -677,33 +694,15 @@ const Footer = () => {
 
         <div className="pt-12 border-t border-nude-200 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-xs text-ink/40 uppercase tracking-widest">
-            © 2026 Lumière Estética Avançada. Todos os direitos reservados.
+            © 2026 ConvertLab - Agência de Performance Premium.
           </p>
           <div className="flex items-center gap-2">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-ink/30">Desenvolvido por</span>
+            <span className="text-[10px] font-bold uppercase tracking-widest text-ink/30">Showcase by</span>
             <span className="text-xs font-bold tracking-tighter text-ink/60">ConvertLab</span>
           </div>
         </div>
       </div>
     </footer>
-  );
-};
-
-const FloatingWhatsApp = () => {
-  return (
-    <motion.a
-      href="https://wa.me/5521999999999"
-      target="_blank"
-      rel="noopener noreferrer"
-      initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center"
-    >
-      <MessageCircle size={32} fill="currentColor" />
-      <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center animate-pulse">1</span>
-    </motion.a>
   );
 };
 
@@ -798,7 +797,6 @@ export default function App() {
         <CTASection />
       </main>
       <Footer />
-      <FloatingWhatsApp />
     </div>
   );
 }

@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --color-gold-50: #fbf8f1;
+  --color-gold-100: #f4ecd9;
+  --color-gold-200: #e9d9b3;
+  --color-gold-300: #d9bf83;
+  --color-gold-400: #c5a059;
+  --color-gold-500: #b38b46;
+  --color-gold-600: #967038;
+  --color-gold-700: #78592e;
+  --color-gold-800: #624929;
+  --color-gold-900: #523d25;
+
+  --color-nude-50: #faf9f6;
+  --color-nude-100: #f5f2ed;
+  --color-nude-200: #e8e1d6;
+  --color-nude-300: #d6ccbc;
+  --color-nude-400: #b8a994;
+
+  --color-ink: #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply bg-nude-50 text-ink antialiased selection:bg-gold-200 selection:text-gold-900;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-md border-b border-white/20;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.mask-fade-bottom {
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.mask-fade-top {
+  mask-image: linear-gradient(to top, black 80%, transparent 100%);
+}
